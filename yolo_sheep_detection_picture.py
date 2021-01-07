@@ -5,7 +5,7 @@ import random
 
 
 # Load Yolo
-net = cv2.dnn.readNet("weights\\yolov3_training_1000.weights", "yolov3_testing.cfg")
+net = cv2.dnn.readNet("yolov3_training_last.weights", "yolov3_testing.cfg")
 
 # Name custom object
 classes = ["Sheep"]
