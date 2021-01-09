@@ -11,7 +11,7 @@ net = cv2.dnn.readNet("yolov3_training_last.weights", "yolov3_testing.cfg")
 classes = ["Sheep"]
 
 # Images path
-images_path = glob.glob(r"D:\\IMONA\\data\\sheep\\*.jpg")
+images_path = glob.glob(r"D:\\IMONA\\data\\deneme\\*.jpg")
 
 
 
@@ -43,7 +43,7 @@ for img_path in images_path:
             scores = detection[5:]
             class_id = np.argmax(scores)
             confidence = scores[class_id]
-            if confidence > 0.3:
+            if confidence > 0.9:
                 # Object detected
                 print(class_id)
                 center_x = int(detection[0] * width)

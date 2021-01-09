@@ -17,7 +17,7 @@ VIDEO_PATH = "video.mp4"
 
 reader = imageio.get_reader(VIDEO_PATH)
 fps = reader.get_meta_data()["fps"]
-writer = imageio.get_writer("output.mp4",fps=fps)
+writer = imageio.get_writer("output2.mp4",fps=fps)
 
 
 
@@ -54,7 +54,7 @@ for i,image_np in enumerate(reader):
             scores = detection[5:]
             class_id = np.argmax(scores)
             confidence = scores[class_id]
-            if confidence > 0.2:
+            if confidence > 0.9:
                 # Object detected
                 print(class_id)
                 center_x = int(detection[0] * width)
